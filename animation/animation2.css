@@ -1,0 +1,88 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.background{
+    width: 100%;
+    height: 100vh;
+    background-image: url('png/rue.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+}
+
+@keyframes van{
+    from{
+        left: -900px;
+        bottom: -100px;
+    }
+
+    50%{
+        bottom: -100px;
+        transform: rotate(-145deg) scale(0.8);
+    }
+    51%{
+        transform: rotate(-110deg) scale(0.8);
+    }
+    55%{
+        bottom: 150px;
+    }
+    80%{
+        bottom: 400px;
+    }
+    90%{
+        bottom: 200px;
+    }
+    to{
+        left: 900px;
+        bottom: -100px;
+        transform: rotate(0) scale(0.8);
+    }
+}
+
+@keyframes crash{
+    from{
+        transform: translateX(0) scale(0.8);
+        bottom: 0px;
+    }
+    2%{
+        bottom: 5px;
+    }
+    5%{
+        bottom: 0px;
+        transform: scale(0.8);
+    }
+    100%{
+        transform: translateX(300px) scale(0.8);
+        bottom: 0px;
+    }
+}
+
+#van{
+    position: absolute;
+    bottom: -900px; left: 0px;
+    transform: rotate(-145deg) scale(0.8);
+    transition: 1s;
+    animation: van 5s 2s forwards ease-in, crash 5s forwards linear 7s;
+}
+
+@keyframes velo{
+    from{
+        right: -850px;
+    }
+    50%{
+        right: 500px;
+    }
+    to{
+        right: 1700px;
+    }
+}
+
+#velo{
+    position: absolute;
+    bottom: 0; right: -850px;
+    transform: scale(0.8);
+    animation: velo 10s forwards linear;
+}

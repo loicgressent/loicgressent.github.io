@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Travail réalisé en licence professionnelle en cours de WebDesign">
+
+<!--- Bootstrap 4.6 --->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<!--- Bootstrap 4.6 --->
+
+    <link rel="stylesheet" href="../style/realisation.css">
+    <title>Loïc Gressent - Luke's Diner</title>
+    <script src="../jquery-3.5.1.min.js"></script>
+    <script>
+//Script pour caché le titre du header a partir de 200px de scroll//
+        window.addEventListener('scroll', function() {
+        if(window.scrollY > 200){
+            var titre = document.querySelector('.titre');
+            titre.style.visibility = "hidden";
+        }
+        if(window.scrollY < 200)
+        {
+            var titre = document.querySelector('.titre');
+            titre.style.visibility = "visible";
+        }
+//Script pour caché le titre du header a partir de 200px de scroll//
+
+//Script pour adapter le nav a partir de 700px de scroll//
+        if(window.scrollY > 850)
+        {
+            var nav = document.querySelector('.nav');
+            nav.classList.add('flex-column');
+            nav.style.width = "max-content";
+            nav.style.top = '25%';
+
+        }
+        if(window.scrollY < 850)
+        {
+            var nav = document.querySelector('.nav');
+            nav.classList.remove('flex-column');
+            nav.style.width = '100%';
+            nav.style.top = '0%';
+        }
+        });
+//Script pour adapter le nav a partir de 700px de scroll//
+
+//Script pour le scrolling smooth//
+        $(document).ready(function(){
+        $("a").on('click', function(event) {
+    
+        if (this.hash !== "") {
+          event.preventDefault();
+    
+          var hash = this.hash;
+    
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+       
+            window.location.hash = hash;
+          });
+        }
+        });
+        });
+//Script pour le scrolling smooth//
+    </script>
+</head>
+<body>
+    <header id="header" class="page-section">
+        <ul class="nav justify-content-center">
+
+          <li class="nav-item">
+            <a href="../index.php" class="nav-link">Retour à l'accueil</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#section1" class="nav-link">Version Desktop</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#section2" class="nav-link">Version Mobile</a>
+          </li>
+
+        </ul>
+
+        <div class="titre">
+            <strong><h1>WebDesign</h1></strong>
+            <h4>Maquette et Prototype</h4>
+        </div>
+
+    </header>
+    <main>
+        <div class="container">
+          <h2 class="text-center">Luke's Diner</h2>
+          <p class="description">Réalisation d'un prototype d'un site vitrine d'un Restaurant Americain.</p>
+
+          <ul class="description">
+            <li>Nom du restaurant : Luke's Diner</li>
+            <li>Logiciels Utilisés : Adobe XD</li>
+          </ul>
+
+          <h4 id="section1">Version Desktop</h4>
+            <!-- Caroussel -->
+            <div id="web" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#web" data-slide-to="0" class="active"></li>
+                <li data-target="#web" data-slide-to="1"></li>
+                <li data-target="#web" data-slide-to="2"></li>
+                <li data-target="#web" data-slide-to="3"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="../images/webdesign/diner/web/Acceuil.jpg" class="d-block img-fluid" alt="Page d'accueil Luke's Diner web">
+                </div>
+                <div class="carousel-item">
+                  <img src="../images/webdesign/diner/web/Contact.jpg" class="d-block img-fluid" alt="Page Contact Luke's Diner web">
+                </div>
+                <div class="carousel-item">
+                  <img src="../images/webdesign/diner/web/Le Restaurant.jpg" class="d-block img-fluid" alt="Page présentation luke's diner web">
+                </div>
+                <div class="carousel-item">
+                    <img src="../images/webdesign/diner/web/Menu.jpg" class="d-block img-fluid" alt="Page Menu luke's diner web">
+                  </div>
+              </div>
+              <a class="carousel-control-prev" href="#web" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+              </a>
+              <a class="carousel-control-next" href="#web" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+              </a>
+            </div>
+
+            <h4 id="section2">Version Mobile</h4>
+
+            <div id="mobile" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#mobile" data-slide-to="0" class="active"></li>
+                <li data-target="#mobile" data-slide-to="1"></li>
+                <li data-target="#mobile" data-slide-to="2"></li>
+                <li data-target="#mobile" data-slide-to="3"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="../images/webdesign/diner/mobile/Acceuil.jpg" class="d-block img-fluid" alt="Page d'accueil Luke's Diner mobile">
+                </div>
+                <div class="carousel-item">
+                  <img src="../images/webdesign/diner/mobile/Contact.jpg" class="d-block img-fluid" alt="Page Contact Luke's Diner mobile">
+                </div>
+                <div class="carousel-item">
+                  <img src="../images/webdesign/diner/mobile/Le Restaurant.jpg" class="d-block img-fluid" alt="Page présentation luke's diner mobile">
+                </div>
+                <div class="carousel-item">
+                    <img src="../images/webdesign/diner/mobile/Menu.jpg" class="d-block img-fluid" alt="Page Menu luke's diner mobile">
+                  </div>
+              </div>
+              <a class="carousel-control-prev" href="#mobile" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+              </a>
+              <a class="carousel-control-next" href="#mobile" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+              </a>
+            </div>
+
+        </div>
+        <footer class="container">
+          <p>
+              Loïc Gressent | Février 2021 | <a href="mentionslégales.html">Mentions Légales</a>
+          </p>
+      </footer>
+    </main>
+</body>
+</html>

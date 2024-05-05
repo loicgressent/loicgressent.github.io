@@ -1,0 +1,521 @@
+:root{
+    --rouge: #590202;
+    --fond1: #0D0D0D;
+    --fond2: #040513;
+    --blanc: #ddd;
+    --card: #262626;
+}
+
+@font-face{
+    font-family: "ST";
+    src: url("Benguiat.ttf") format("truetype");
+    font-family: "Netflix";
+    src: url("Netflix.ttf") format("truetype");
+}
+
+@keyframes zoom{
+    100%{transform: scale(1);}
+}
+
+@keyframes opacite{
+    100%{opacity: 100;}
+}
+
+@keyframes reset{
+    100%{transform: translateY(0);}
+    100%{transform: translateX(0);}
+    100%{transform: scale(1);}
+}
+
+@keyframes bordertop{
+    100%{width: 32%; transform: translate(-50%,0);}
+}
+
+@keyframes borderbot{
+    100%{width: 160%;}
+}
+
+@keyframes letter{
+    100%{letter-spacing: 0;}
+}
+
+@keyframes ecriture{
+    from{width: 0;}
+    to{width: inherit;}
+}
+
+@keyframes flash {
+    0% { opacity: 1; } 
+    2% { opacity: 0; }
+    3% { opacity: 0.6; }
+    4% { opacity: 0.2; }
+    6% { opacity: .9; }
+    100% { opacity: 1; }
+}
+
+body,html{
+    font-family: "ST";
+    background: linear-gradient(var(--fond1), var(--fond2));
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.titre{
+    width: 90%;
+    margin: 20px auto;
+    transform: scale(1.2);
+    animation: zoom 4s forwards linear, letter 4s forwards linear;
+    letter-spacing: 20px;
+}
+
+h1{
+    color: var(--fond1);
+    font-size: 6rem;
+    margin: 0 auto;
+    text-align: center;
+    text-shadow:2px 2px 0 var(--rouge),
+                2px -2px 0 var(--rouge),
+                -2px 2px 0 var(--rouge),
+                -2px -2px 0 var(--rouge),
+                2px 0px 0 var(--rouge),
+                0px 2px 0 var(--rouge),
+                -2px 0px 0 var(--rouge),
+                0px -2px 0 var(--rouge);
+}
+
+body h1:nth-child(2){
+    width: fit-content;
+}
+
+/**before et after**/
+
+body h1:nth-child(1)::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 0px;
+    height: 2px;
+    background-color: var(--rouge);
+    animation: bordertop 2s 3s forwards;
+}
+
+body h1:nth-child(1)::after{
+    content: '';
+    position: absolute;
+    left: 50%; top: 5px;
+    width: 0px;
+    height: 2px;
+    background-color:var(--rouge);
+    animation: bordertop 2s 3s forwards;
+}
+
+.span_t2::before{
+    content: '';
+    position: absolute;
+    top: 20px; right: 70px;
+    width: 0px;
+    height: 2px;
+    background-color:var(--rouge);
+    animation: borderbot 1.5s 4s forwards;
+}
+
+.span_t2::after{
+    content: '';
+    position: absolute;
+    top: 25px; right: 70px;
+    width: 0px;
+    height: 2px;
+    background-color:var(--rouge);
+    animation: borderbot 1.5s 4s forwards;
+}
+
+.span_s2::before{
+    content: '';
+    position: absolute;
+    top: 20px; left: 65px;
+    width: 0px;
+    height: 2px;
+    background-color:var(--rouge);
+    animation: borderbot 1.5s 4s forwards;
+}
+
+.span_s2::after{
+    content: '';
+    position: absolute;
+    top: 25px; left:65px;
+    width: 0px;
+    height: 2px;
+    background-color:var(--rouge);
+    animation: borderbot 1.5s 4s forwards;
+}
+
+
+/**before et after**/
+
+body h1:nth-child(2){
+    transform: translateY(-15px);
+    font-size: 5.5rem;
+    padding: 0 5px;
+}
+
+.span_s,.span_r2{
+    display:inline-block;
+    transform: translateY(10px);
+    font-size: 7rem;
+}
+
+.span_n{
+    display: inline-block;
+    transform: translateY(-100px);
+    animation: reset 2s forwards linear, flash 1.5s infinite;
+}
+
+.span_s2{
+    display: inline-block;
+    transform: translateY(100px) translateX(30px);
+    animation: reset 3s forwards linear, flash 1.5s .5s infinite;
+}
+
+.span_t2{
+    display: inline-block;
+    transform: translateX(-100px);
+    animation: reset 2s forwards linear, flash 1.5s 1s infinite;
+}
+
+.span_n2{
+    display: inline-block;
+    transform: translateY(50px);
+    animation: reset 3s forwards linear, flash 1.5s 1.3s infinite;
+}
+
+.span_r{
+    display: inline-block;
+    transform: translate(50px, 50px);
+    animation: reset 3s forwards linear, flash 1.5s .8s infinite;
+}
+
+.span_t{
+    display: inline-block;
+    transform: translate(-100px, -100px);
+    animation: reset 3s forwards linear, flash 1.5s 2s infinite;
+}
+
+/*Personnage*/
+
+.personnage{
+    width: 80%;
+    margin: 0 auto 2rem auto;
+    height: auto;
+    display: flex;
+    row-gap: 50px;
+    column-gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+@keyframes degrade{
+    0%{background-position:0% 57%}
+    50%{background-position:100% 44%}
+    100%{background-position:0% 57%}
+}
+
+.card{
+    width: 18rem;
+    height: 24rem;
+    padding-top: 10px;
+
+    background: linear-gradient(273deg,#40010d,#012326);
+    background-size: 400% 400%;
+
+    transition: box-shadow .3s ease;
+    border-radius: 5px;
+}
+
+.card:hover{
+    box-shadow: rgba(52, 90, 84, 0.4) 5px 5px, rgba(52, 90, 84, 0.3) 10px 10px, rgba(52, 90, 84, 0.2) 15px 15px, rgba(52, 90, 84, 0.1) 20px 20px, rgba(52, 90, 84, 0.05) 25px 25px;
+}
+
+.card img{
+    width: 85%;
+    height: 77%;
+    display: block;
+    margin: 10px auto;
+}
+
+.nom{
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--card);
+    text-shadow:
+    2px -2px 0 var(--blanc),
+    -2px 2px 0 var(--blanc),
+    -2px -2px 0 var(--blanc),
+    2px 0px 0 var(--blanc),
+    0px 2px 0 var(--blanc),
+    -2px 0px 0 var(--blanc),
+    0px -2px 0 var(--blanc);
+    margin: 30px auto 0 auto;
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: ecriture 4s steps(44) 7s 1 normal both;
+}
+
+@keyframes hopper{
+    100%{height: 24rem; padding-top: 10px;}
+}
+
+.card:nth-of-type(1){
+    height: 0; padding-top: 0;
+    animation: hopper 1s 5s forwards, degrade 3s ease infinite;
+    z-index: 1;
+}
+
+@keyframes billy{
+    0%{opacity: 100;}
+    100%{transform: translate(0); opacity: 100;}
+}
+
+.card:nth-of-type(2){
+    transform: translateX(-25.5rem);
+    animation: billy 1s 6s forwards, degrade 3s ease infinite;
+    opacity: 0;
+}
+
+@keyframes dustin{
+    100%{transform: scale(1); opacity: 100;}
+}
+
+.card:nth-of-type(3){
+    opacity: 0;
+    transform: scale(1.5);
+    animation: dustin 1s 6s forwards, degrade 3s ease infinite;
+}
+
+@keyframes eleven{
+    100%{transform: scale(1);}
+}
+
+.card:nth-of-type(4){
+    transform: scale(0);
+    animation: dustin 1s 5s forwards, degrade 3s ease infinite;
+}
+
+@keyframes nancy{
+    100%{transform: translate(0); opacity: 100;}
+}
+
+.card:nth-of-type(5){
+    opacity: 0;
+    transform: translateX(12.5rem);
+    animation: nancy 1s 5.5s forwards, degrade 3s ease infinite;
+}
+
+.card:nth-of-type(6){
+    opacity: 0;
+    transform: translateX(-12.5rem);
+    animation: nancy 1s 5.5s forwards, degrade 3s ease infinite;
+}
+
+@keyframes will{
+    100%{transform: translateX(0); opacity: 100;}
+}
+
+.card:nth-of-type(7){
+    opacity: 0;
+    transform: translateX(25.5rem);
+    animation: will 1s 11s forwards, degrade 3s ease infinite;
+}
+
+@keyframes mike{
+    100%{width: 18rem;}
+}
+
+@keyframes shake{
+    10%,90% {transform: translate3d(-2px, 0, 0);}
+    20%,80%{transform: translate3d(4px, 0, 0);}
+    30%,50%,70%{transform: translate3d(-6px, 0, 0);}
+    40%,60%{transform: translate3d(6px, 0, 0);}
+}
+
+.card:nth-of-type(8){
+    width: 0;
+    animation: mike 1s 6s forwards, shake 1s cubic-bezier(.36,.07,.19,.97) 10s both, degrade 3s ease infinite;
+    z-index: 1;
+}
+
+@keyframes flash {
+    0% { opacity: 1; } 
+    2% { opacity: 0; }
+    3% { opacity: 0.6; }
+    4% { opacity: 0.2; }
+    6% { opacity: .9; } 
+    100% { opacity: 1; }
+}
+
+/**Canva Guirlande**/
+
+@keyframes grandit{
+    100%{width: 100%;}
+}
+
+
+.canva4{
+    width: 100%;
+    height: 100px;
+    transform: translateX(-100%);
+    animation: reset 1s ease-out forwards;
+}
+
+@keyframes apparait{
+    100%{opacity:1;}
+}
+
+@keyframes allume{
+    50%{opacity: 1;}
+    to{opacity: 0.1;}
+}
+
+
+.canva1{
+    transform: translate(200px, 87px);
+    opacity: 0;
+    animation: apparait 1s 1s forwards, allume 4s 1s infinite ease;
+    transition: all 2s;
+}
+.canva2{
+    transform: translate(400px, 96px) rotate(5deg);
+    opacity: 0;
+    animation: apparait 1s 3s forwards, allume 4s 2s infinite ease;
+}
+.canva3{
+    transform: translate(700px, 99px) rotate(10deg);
+    opacity: 0;
+    animation: apparait 1s 2s forwards, allume 4s 4s infinite ease;
+}
+.canva5{
+    transform: translate(1250px, -83px) rotate(-15deg);
+    opacity: 0;
+    animation: apparait 1s 4s forwards, allume 4s 6s infinite ease;
+}
+.canva6{
+    transform: translate(1000px, -80px) rotate(5deg);
+    opacity: 0;
+    animation: apparait 1s 6s forwards, allume 4s 8s infinite ease;
+}
+.canva7{
+    transform: translate(1450px, -93px);
+    opacity: 0;
+    animation: apparait 1s 5s forwards, allume 4s 10s infinite ease;
+}
+
+
+/**test falgelleur**/
+
+#flagelleur{
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    animation: flagelleur 8s infinite linear;
+    position: fixed;
+}
+
+@keyframes flagelleur{
+    from,49%{opacity: 0;}
+    50%{opacity: 1;}
+    55%{opacity: 0;}
+    60%{opacity: 1;}
+    70%{opacity: 0;}
+}
+
+/**test falgelleur**/
+
+#suivant{
+    display: flex;
+    justify-content: center;
+    margin: 8em 0 5em 0;
+    position: relative;
+}
+
+#page_suivante{
+    color: #012326;
+    text-decoration: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    position: absolute;
+    background-color: #012326;
+    padding: .7em 2em;
+    z-index: 1;
+    letter-spacing: .2rem;
+    transition: all .3s;
+    transform-origin: center center;
+    text-shadow:
+    1px -1px 0 var(--blanc),
+    -1px 1px 0 var(--blanc),
+    -1px -1px 0 var(--blanc),
+    1px 0px 0 var(--blanc),
+    0px 1px 0 var(--blanc),
+    -1px 0px 0 var(--blanc),
+    0px -1px 0 var(--blanc);
+}
+
+span{
+    transition: all .5s;
+}
+
+#v{
+    transform: translateX(60px);
+    display: inline-block;
+}
+
+#t{
+    transform: translateX(-60px);
+    display: inline-block;
+}
+
+#a{
+    transform: translateX(40px);
+    display: inline-block;
+}
+
+#e{
+    transform: translateX(-40px);
+    display: inline-block;
+}
+
+#page_suivante:hover span{
+    transform: translateX(0);
+}
+
+@keyframes bouton{
+    from,19%{background-color: #012326;}
+    20%{background-color: var(--rouge);}
+    39%{background-color: #012326;}
+    40%{background-color: var(--rouge);}
+    41%{background-color: #012326;}
+    to{background-color: var(--rouge);}
+}
+
+#page_suivante:hover{
+    animation: bouton 2s forwards ease-in-out;
+}
+
+#pngdustin{
+    position: absolute;
+    top:-5px;
+    width: 65px;
+    height: 70px;
+    transition: all 1s;
+    background-image: url('png/dustin.png');
+    background-repeat: no-repeat;
+    background-position: -66px;
+    background-size: cover;
+    transform: scale(0.8);
+}
+
+#suivant:hover #pngdustin{
+    top: -70px;
+}
+
+

@@ -1,0 +1,621 @@
+:root{
+    --rouge: #590202;
+    --fond1: #0D0D0D;
+    --fond2: #040513;
+    --blanc: #ddd;
+    --card: #262626;
+}
+
+a{
+    text-decoration: none;
+    color: #f1f1f1;
+}
+
+@keyframes bordertop{
+    100%{width: 32%; transform: translate(-50%,0);}
+}
+
+@keyframes borderbot{
+    100%{width: 160%;}
+}
+
+@keyframes letter{
+    100%{letter-spacing: 0;}
+}
+
+@keyframes reset{
+    100%{transform: translateY(0);}
+    100%{transform: translateX(0);}
+    100%{transform: scale(1);}
+}
+
+@keyframes flash {
+    0% { opacity: 1; } 
+    2% { opacity: 0; }
+    3% { opacity: 0.6; }
+    4% { opacity: 0.2; }
+    6% { opacity: .9; }
+    100% { opacity: 1; }
+}
+
+@keyframes zoom{
+    100%{transform: scale(1);}
+}
+
+@font-face{
+    font-family: "ST";
+    src: url("Benguiat.ttf") format("truetype");
+    font-family: "Netflix";
+    src: url("Netflix.ttf") format("truetype");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: var(--fond1);
+    overflow-x: hidden;
+    transition: background-image 10s linear,background-position 10s linear,background-repeat 10s linear,background-size 10s linear;
+}
+
+.updown{
+    background-image: url('image/updown.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body,html{
+    font-family: 'ST';
+    padding: 0;
+    margin: 0;
+}
+
+
+.icone path:nth-child(1){
+    animation-delay: .1s;
+}
+.icone path:nth-child(2){
+    animation-delay: .2s;
+}
+.icone path:nth-child(3){
+    animation-delay: .3s;
+}
+.icone path:nth-child(4){
+    animation-delay: .4s;
+}
+.icone path:nth-child(5){
+    animation-delay: .5s;
+}
+.icone path:nth-child(6){
+    animation-delay: .6s;
+}
+.icone path:nth-child(1){
+    animation-delay: .7s;
+}
+
+.titre{
+    width: 90%;
+    margin: 0px auto;
+    transform: scale(1.2);
+    animation: zoom 4s forwards linear, letter 4s forwards linear;
+    letter-spacing: 20px;
+}
+
+h1{
+    color: var(--fond1);
+    font-size: 6rem;
+    margin: 0 auto;
+    text-align: center;
+    text-shadow:2px 2px 0 var(--rouge),
+                2px -2px 0 var(--rouge),
+                -2px 2px 0 var(--rouge),
+                -2px -2px 0 var(--rouge),
+                2px 0px 0 var(--rouge),
+                0px 2px 0 var(--rouge),
+                -2px 0px 0 var(--rouge),
+                0px -2px 0 var(--rouge);
+}
+
+body h1:nth-child(2){
+    width: fit-content;
+}
+
+/**before et after**/
+
+body h1:nth-child(1)::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 0px;
+    height: 2px;
+    background-color: var(--rouge);
+    animation: bordertop 2s 3s forwards;
+}
+
+body h1:nth-child(1)::after{
+    content: '';
+    position: absolute;
+    left: 50%; top: 5px;
+    width: 0px;
+    height: 2px;
+    background-color:var(--rouge);
+    animation: bordertop 2s 3s forwards;
+}
+
+.span_t2::before{
+    content: '';
+    position: absolute;
+    top: 20px; right: 70px;
+    width: 0px;
+    height: 2px;
+    background-color:var(--rouge);
+    animation: borderbot 1.5s 4s forwards;
+}
+
+.span_t2::after{
+    content: '';
+    position: absolute;
+    top: 25px; right: 70px;
+    width: 0px;
+    height: 2px;
+    background-color:var(--rouge);
+    animation: borderbot 1.5s 4s forwards;
+}
+
+.span_s2::before{
+    content: '';
+    position: absolute;
+    top: 20px; left: 65px;
+    width: 0px;
+    height: 2px;
+    background-color:var(--rouge);
+    animation: borderbot 1.5s 4s forwards;
+}
+
+.span_s2::after{
+    content: '';
+    position: absolute;
+    top: 25px; left:65px;
+    width: 0px;
+    height: 2px;
+    background-color:var(--rouge);
+    animation: borderbot 1.5s 4s forwards;
+}
+
+
+/**before et after**/
+
+body h1:nth-child(2){
+    transform: translateY(-15px);
+    font-size: 5.5rem;
+    padding: 0 5px;
+}
+
+.span_s,.span_r2{
+    display:inline-block;
+    transform: translateY(10px);
+    font-size: 7rem;
+}
+
+.span_n{
+    display: inline-block;
+    transform: translateY(-100px);
+    animation: reset 2s forwards linear, flash 1.5s infinite;
+}
+
+.span_s2{
+    display: inline-block;
+    transform: translateY(100px) translateX(30px);
+    animation: reset 3s forwards linear, flash 1.5s .5s infinite;
+}
+
+.span_t2{
+    display: inline-block;
+    transform: translateX(-100px);
+    animation: reset 2s forwards linear, flash 1.5s 1s infinite;
+}
+
+.span_n2{
+    display: inline-block;
+    transform: translateY(50px);
+    animation: reset 3s forwards linear, flash 1.5s 1.3s infinite;
+}
+
+.span_r{
+    display: inline-block;
+    transform: translate(50px, 50px);
+    animation: reset 3s forwards linear, flash 1.5s .8s infinite;
+}
+
+.span_t{
+    display: inline-block;
+    transform: translate(-100px, -100px);
+    animation: reset 3s forwards linear, flash 1.5s 2s infinite;
+}
+
+/* Synopsis */
+
+#synopsis{
+    color: #f1f1f1;
+    width: 75%;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-family: Netflix;
+    /* border: 1px solid green; */
+    text-align: center;
+}
+
+
+#synopsis span{
+    opacity: 0;
+    display: block;
+}
+
+@keyframes syno{
+    from{
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#synopsis span:nth-child(1){
+    animation: syno 1s 2s ease-in forwards;
+}
+#synopsis span:nth-child(2){
+    animation: syno 1s 2.5s ease-in forwards;
+}
+#synopsis span:nth-child(3){
+    animation: syno 1s 3s ease-in forwards;
+}
+#synopsis span:nth-child(4){
+    animation: syno 1s 3.5s ease-in forwards;
+}
+
+/* saison */
+
+.saison{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    margin: 5rem auto 3rem;
+}
+
+.saison img{
+    display: block;
+    width: 0px;
+    height: 0px;
+    box-shadow: 0 0 10px var(--blanc);
+    animation: saison .8s ease forwards;
+    transition: all .8s ease;
+    z-index: 1;
+}
+
+.saison img:hover{
+    transform:rotateY(180deg);
+}
+
+@keyframes saison{
+    to{
+        width: 350px;
+        height: 350px;
+    }
+}
+
+.saison img:nth-child(1){
+    animation-delay: 4s;
+}
+.saison img:nth-child(2){
+    animation-delay: 4.5s;
+}
+.saison img:nth-child(3){
+    animation-delay: 5s;
+}
+
+/* button */
+
+.button{
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    margin: 0 auto;
+    font-family: Netflix;
+    letter-spacing: .1rem;
+    font-size: 1.5rem;
+    z-index: 3;
+}
+
+.text{
+    position: relative;
+    background: var(--rouge);
+    padding: .5rem 2rem;
+    background: linear-gradient( #9a3839,#2d816d);
+    border-radius: 2px;
+    visibility: hidden;
+    transform: translateY(-10rem);
+    animation: button .8s ease forwards;
+}
+
+.text:hover{
+    background: linear-gradient(#2d816d, #9a3839);
+}
+
+@keyframes button{
+    80%{
+        visibility: visible;
+    }
+    to{
+        transform: translateY(0);
+        visibility: visible;
+    }
+}
+
+#btn_s1{
+    animation-delay: 6s;
+}
+#btn_s2{
+    animation-delay: 6.5s;
+}
+#btn_s3{
+    animation-delay: 7s;
+}
+
+.text::after{
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0; bottom: -5px;
+    width: 0;
+    height: 100%;
+    transition: .3s ease-in-out;
+    border-bottom: 2px solid transparent;
+}
+
+.text:hover::after{
+    width: 100%;
+    border-bottom: 2px solid #9a3839;
+}
+
+.text::before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0; top: -110%;
+    width: 0;
+    height: 100%;
+    transition: .3s ease-in-out;
+    border-bottom: 2px solid transparent;
+}
+
+.text:hover::before{
+    width: 100%;
+    border-bottom: 2px solid #2d816d;
+}
+
+#eggo{
+    position: absolute;
+    width: 5rem;
+    top: 2rem;
+    left: 2rem;
+}
+
+/* eggo */
+
+#eggo{
+    z-index: 2;
+    animation: tournicoti 5s ease-in-out infinite;
+}
+
+#eggo:hover{
+    cursor:  pointer;
+}
+
+@keyframes tournicoti{
+    to{
+        transform: rotateY(3600deg);
+    }
+}
+
+/*  */
+
+.accueil{
+    height: 100vh;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.anim_accueil_1{
+    animation: accueilbye_1 1s ease forwards;
+}
+
+.anim_accueil_2{
+    animation: accueilbye_2 1s ease forwards;
+}
+
+@keyframes accueilbye_1{
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes accueilbye_2{
+    to{
+        transform: translateX(100%);
+    }
+}
+
+.saison1{
+    position: absolute;
+    top: 0;
+    transform: translateX(100%);
+    width: 100%;
+    height: 100vh;
+    background-image: url("image/bgs1.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-blend-mode: screen;
+}
+
+
+.anim_saison{
+    animation: resets1 1s ease forwards;
+}
+
+@keyframes resets1{
+    to{
+        transform: translateX(0);
+    }
+}
+
+/* menu saison 1 */
+
+#menu{
+    width: 10rem;
+    background: var(--fond2);
+    height: 100vh;
+    color: #2d816d;
+    font-family: 'Netflix';
+    font-size: 1.5rem;
+    letter-spacing: .15rem;
+    transition: .5s ease;
+    transform: translateY(-100vh);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-weight: 200;
+}
+
+.test{
+    transform: translateY(0) !important;
+}
+
+.saison1 nav ul{
+    list-style-type: none;
+}
+
+.saison1 nav ul li{
+    width: 100%;
+    text-align: center;
+    padding:2rem 0;
+    transition: padding-left .3s ease;
+}
+
+.saison1 nav ul li:not(#retour):hover{
+    background: var(--rouge);
+    cursor: pointer;
+    padding-left: 1rem;
+}
+
+#retour{
+    font-size: 80%;
+    color: var(--blanc);
+    transition: .2s ease;
+}
+
+#retour:hover{
+    cursor: pointer;
+    font-size: 100%;
+}
+
+/* menu saison 1 */
+
+@keyframes svg{
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+
+.anim_svg{
+    animation: svg ease forwards;
+}
+
+.path_titre{
+    stroke-dasharray: 200px;
+    stroke-dashoffset: 200px;
+    animation-duration: 10s;
+}
+
+.path_draw_s1{
+    stroke-dasharray: 1350px;
+    stroke-dashoffset: 1350px;
+    animation-duration: 15s;
+    animation-delay: 2s;
+}
+
+#svgtitre{
+    position: absolute;
+    top: 10%; left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#svgtitre:hover{
+    cursor: pointer;
+}
+
+
+#svgdraw_s1{
+    position: absolute;
+    bottom: 0; left: 10%;
+}
+
+/* resume */
+
+#resume_ep1,#resume_ep2,#resume_ep3,#resume_ep4,#resume_ep5,#resume_ep6,#resume_ep7,#resume_ep8{
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    right: 50%;
+    margin: 0 auto;
+    width: 70%;
+    font-family: 'Netflix';
+    font-size: 1.2rem;
+    transform: translate(100%,-50%);
+    transition: 1s ease;
+}
+
+.resume{
+    color: #fff;
+    letter-spacing: .1rem;
+}
+
+h2{
+    color: var(--rouge);
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    letter-spacing: .1rem;
+}
+
+.reset{
+    transform: translate(-50%,-50%) !important;
+}
+
+
+/* Saison 2 div */
+
+.saison2{
+    position: absolute;
+    top: 0;
+    transform: translateX(-100%);
+    width: 100%;
+    height: 100vh;
+    background-image: url("image/bgs2.jpg");
+    background-size: cover;
+    background-position: 50% 25%;
+    background-blend-mode: screen;
+}
+
+.pathdraw_s2{
+    stroke-dasharray: 1350px;
+    stroke-dashoffset: 1350px;
+    animation-duration: 15s;
+    animation-delay: 2s;
+}
